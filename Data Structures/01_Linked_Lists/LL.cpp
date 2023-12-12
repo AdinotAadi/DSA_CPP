@@ -107,6 +107,26 @@ int lengthLL()
     return count;
 }
 
+int search(int val)
+{
+    if (lengthLL == 0)
+    {
+        std::cout << "The linked list is empty." << std::endl;
+    }
+    struct node *i = Head;
+    int idx = 0, flag = 0;
+    for (i = Head; i != NULL; i = i->next)
+    {
+        idx++;
+        if (i->data == val)
+        {
+            flag = 1;
+            return idx;
+        }
+    }
+    return -1;
+}
+
 void printLL()
 {
     if (Head == NULL)
@@ -187,6 +207,8 @@ int main()
     insertBeg(1);
     insertBeg(100);
     printLL();
+    std::cout << "Position of 2 in the linked list is: " << search(2) << std::endl
+              << std::endl;
     deleteVal(2);
     printLL();
     deleteHead();
