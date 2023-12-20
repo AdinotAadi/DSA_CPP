@@ -57,7 +57,7 @@ public:
     {
         if (Head == nullptr)
         {
-            insertBegin(val);
+            return insertBegin(val);
         }
         Node *newnode = new Node(val);
         Node *i = Head;
